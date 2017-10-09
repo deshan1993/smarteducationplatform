@@ -6,6 +6,7 @@
     $sql1="SELECT * FROM sm_countries";
     $result1=mysqli_query($con, $sql1);
     $select = "-Select One-";
+	
 
     if(mysqli_num_rows($result1)){
         $select_country1= '<select id ="country_list1" name="country_list1" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
