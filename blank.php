@@ -9,7 +9,7 @@
 	
 
     if(mysqli_num_rows($result1)){
-        $select_country1= '<select id ="country_list1" name="country_list1" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
+        $select_country1= '<select id ="country_list1" name="country_list1" class="form-control form-control-sm" style="margin-top:7px;">';
         $select_country1.= '<option value=""></option>';
     while($rs = mysqli_fetch_assoc($result1)){
       $select_country1.='<option value="'.$rs['id'].'">'.$rs['country_name'].'</option>';
@@ -22,7 +22,7 @@
     $result2 = mysqli_query($con,$sql2);
 
     if(mysqli_num_rows($result2)){
-        $select_country2= '<select id ="country_row0" name="country_row[0]" class="form-control form-control-sm" style="height: 37px;font-size:16px;margin-bottom: 9px;width: 150px;margin-top: 7px;">';
+        $select_country2= '<select id ="country_row0" name="country_row[0]" class="form-control form-control-sm" style="margin-top: 7px;">';
         $select_country2.= '<option value=""></option>';
     while($rs2 = mysqli_fetch_assoc($result2)){
       $select_country2.='<option value="'.$rs2['id'].'">'.$rs2['country_name'].'</option>';
@@ -35,7 +35,7 @@
     $result9 = mysqli_query($con,$sql9);
 
     if(mysqli_num_rows($result9)){
-        $select_country9= '<select id ="country_row1" name="country_row[1]" class="form-control form-control-sm" style="height: 37px;font-size:16px;margin-bottom: 9px;width: 150px;margin-top: 7px;margin-left: 97px;">';
+        $select_country9= '<select id ="country_row1" name="country_row[1]" class="form-control form-control-sm" style="margin-top:7px;">';
         $select_country9.= '<option value=""></option>';
     while($rs9 = mysqli_fetch_assoc($result9)){
       $select_country9.='<option value="'.$rs9['id'].'">'.$rs9['country_name'].'</option>';
@@ -60,7 +60,7 @@
     $sql3 = "SELECT pro_name,pro_id FROM sm_professional";
     $result3 = mysqli_query($con,$sql3);
     if(mysqli_num_rows($result3)){
-        $select3 = '<select id="prof_row0" name="prof_row[0]" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
+        $select3 = '<select id="prof_row0" name="prof_row[0]" class="form-control form-control-sm" style="margin-top:7px;">';
         $select3.= '<option value=""></option>';
     while($rs3 = mysqli_fetch_assoc($result3)){
         $select3.='<option value="'.$rs3['pro_id'].'">'.$rs3['pro_name'].'</option>';
@@ -72,7 +72,7 @@
     $sql7 = "SELECT pro_name,pro_id FROM sm_professional";
     $result7 = mysqli_query($con,$sql7);
     if(mysqli_num_rows($result7)){
-        $select7 = '<select id="prof_row1" name="prof_row[1]" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
+        $select7 = '<select id="prof_row1" name="prof_row[1]" class="form-control form-control-sm" style="margin-top: 7px;">';
         $select7.= '<option value=""></option>';
     while($rs7 = mysqli_fetch_assoc($result7)){
         $select7.='<option value="'.$rs7['pro_id'].'">'.$rs7['pro_name'].'</option>';
@@ -96,7 +96,7 @@
     $sql4 = "SELECT grade_name,grade_id FROM sm_grade";
     $result4 = mysqli_query($con,$sql4);
     if(mysqli_num_rows($result4)){
-        $select4 = '<select id="grade_list_row0" name="grade_list_row[0]" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
+        $select4 = '<select id="grade_list_row0" name="grade_list_row[0]" class="form-control form-control-sm" style="margin-top: 7px;">';
         $select4.= '<option value=""></option>';
     while($rs4 = mysqli_fetch_assoc($result4)){
         $select4.='<option value="'.$rs4['grade_id'].'">'.$rs4['grade_name'].'</option>';
@@ -108,7 +108,7 @@
     $sql8 = "SELECT grade_name,grade_id FROM sm_grade";
     $result8 = mysqli_query($con,$sql8);
     if(mysqli_num_rows($result8)){
-        $select8 = '<select id="grade_list_row1" name="grade_list_row[1]" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
+        $select8 = '<select id="grade_list_row1" name="grade_list_row[1]" class="form-control form-control-sm" style="margin-top: 7px;">';
         $select8.= '<option value=""></option>';
     while($rs8 = mysqli_fetch_assoc($result8)){
         $select8.='<option value="'.$rs8['grade_id'].'">'.$rs8['grade_name'].'</option>';
@@ -120,7 +120,7 @@
     $sql11 = "SELECT grade_name,grade_id FROM sm_grade";
     $result11 = mysqli_query($con,$sql11);
     if(mysqli_num_rows($result11)){
-        $select11 = '<select id="grade_list_row2" name="grade_list_row[2]" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
+        $select11 = '<select id="grade_list_row2" name="grade_list_row[2]" class="form-control form-control-sm" style="margin-top: 7px;">';
         $select11.= '<option value=""></option>';
     while($rs11 = mysqli_fetch_assoc($result11)){
         $select11.='<option value="'.$rs11['grade_id'].'">'.$rs11['grade_name'].'</option>';
@@ -267,10 +267,10 @@
   <link href="css/home-style.css" rel="stylesheet">
 
     <script src="js/jquery-ui.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
     <!-- <script src="../js/jquery-3.2.1.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.js"></script>
+    <script src="js/1.17.0-additional-methods.js"></script>
     <script src="js/form_validation.js"></script>
 
     <script>
@@ -746,267 +746,282 @@
     <div class="container-fluid">
         <div class="row" id="outline">
                 
-                <div class="col-md-12 col-lg-12 col-12" id="title">
-                    <h3 style="margin-top: 0px;margin-bottom: 0px;padding-top: 10px;padding-bottom: 10px;">Content Provider Registration Screen</h3>
-                    <!--<button id="close-btn" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                </div>
+            <div class="col-md-12" id="title">
+                <h5 style="margin-top: 0px;margin-bottom: 0px;padding-top: 10px;padding-bottom: 10px;">Content Provider Registration Screen</h5>
+            </div>
                 
-                <div id="selection-row" class="row">
-                    <div class="col-md-4">
-                        <h4 id="specify">Specify whether content provider is,</h4>
-                    </div>
-                    <div id="radioB1" class="col-md-3">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="radio-btn" id="radio-btn1" value="radio-btn1" checked>
-                                    An Individual
-                            </label>
-                        </div>
-                    </div>
-                    <div id="radioB2" class="col-md-5">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="radio-btn" id="radio-btn2" value="radio-btn2">
-                                        Educational Institution / Professional body
-                                </label>
-                            </div>
-                        </div>
+                
+            <div class="col-md-5">
+                <h5 id="specify">Specify whether content provider is,</h5>
+            </div>
+
+            <div id="radioB1" class="col-md-2">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="radio-btn" id="radio-btn1" value="radio-btn1" checked>
+                            An Individual
+                    </label>
                 </div>
+            </div>
+
+            <div id="radioB2" class="col-md-5">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="radio-btn" id="radio-btn2" value="radio-btn2">
+                            Educational Institution / Professional body
+                    </label>
+                </div>
+            </div>
 
                 <form id="form1" method="POST" action="../model/insertCppersonalDetail.php">
                 <div class="row" id="individual-category"><!--individual form-->
-                    <div class="row">
-                    <h4><br>&emsp;If Individual,</h4><br>
-                    <div class="col-12 col-md-12 col-sm-12">
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="cpName" name="cpName" class="form-control form-control-sm" type="text" placeholder="Full Name:">
+
+                <div class="col-md-12">
+                    <h6>&emsp;If Individual,</h6>
+                </div> 
+                    
+                <div class="col-md-6">
+                    <input id="cpName" name="cpName" class="form-control form-control-sm" type="text" placeholder="Full Name:">
+                </div>
+
+                <div class="col-md-6">
+                    <input id="cpFullName" name="cpFullName" class="form-control form-control-sm" type="text" placeholder="Name with Initials:">
+                </div>
+               
+                <div class="col-md-6">
+                    <select id="gender" name="gender" class="form-control form-control-sm" style="height: 34px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">
+                        <option value="">Gender</option>    
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <input id="cpNic" name="cpNic" class="form-control form-control-sm" type="text" placeholder="N.I.C:">
+                </div>
+                     
+                <div class="col-md-6">
+                    <input id="cpDesignation" name="cpDesignation" class="form-control form-control-sm" type="text" placeholder="Designation:">
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                <div class="row">
+                        <div class="col-md-5 col-sm-5" style="top: 15px;right: 4px;">
+                            Date of birth:
                         </div>
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="cpFullName" name="cpFullName" class="form-control form-control-sm" type="text" placeholder="Name with Initials:">
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-12 col-sm-12">
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <select id="gender" name="gender" class="form-control form-control-sm" style="height: 34px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">
-                                <option value="">Gender</option>    
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="cpNic" name="cpNic" class="form-control form-control-sm" type="text" placeholder="N.I.C:">
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-12 col-sm-12">
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="cpDesignation" name="cpDesignation" class="form-control form-control-sm" type="text" placeholder="Designation:">
-                        </div>
-                        <div class="col-sm-12 col-6 col-md-6">
-                        <div class="row">
-                                <div class="col-sm-6 col-6 col-md-5" style="top: 15px;right: 4px;">
-                                    Date of birth:
-                                </div>
-                                <div class="col-sm-6 col-6 col-md-7">
-                                <input type="text" id="cpDob" name="cpDob" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-12 col-sm-12">
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input type="text" id="cpEmail" name="cpEmail" class="form-control form-control-sm" type="text" placeholder="Email:">
-                        </div>
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="cpMobile" name="cpMobile" class="form-control form-control-sm" type="text" placeholder="Contact No:" onkeydown="phoneno()" maxlength="10" />
+                        <div class="col-md-7 col-sm-7">
+                        <input type="text" id="cpDob" name="cpDob" class="form-control form-control-sm">
                         </div>
                     </div>
                 </div>
-       
-                    <div class="row"><!--Highest education qualification-->
-                            <br><h4>&emsp;Highest education level achieved,</h4><br>
-                            
-                            <div class="col-md-4" style="padding-left: 0px;padding-right: 0px;width: 315px;">
-                                <table class="table table-bordered">
-                                    <tr><td align="center">Qualification achieved</td></tr>
-                                    <tr><td>
-                                        <input id="highest_quali" name="highest_quali" class="form-control form-control-sm" type="text">
-                                    </td></tr>
-                                </table>
-                            </div>
+                     
+                <div class="col-md-6">
+                    <input type="text" id="cpEmail" name="cpEmail" class="form-control form-control-sm" type="text" placeholder="Email:">
+                </div>
 
-                            <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
-                                <table class="table table-bordered">
-                                    <tr><td align="center">University / Institute</td></tr>
-                                    <tr><td>
-                                        <input id="highest_uni" name="highest_uni" class="form-control form-control-sm" type="text">
-                                    </td></tr>
-                                </table>
-                            </div>
+                <div class="col-md-6">
+                    <input id="cpMobile" name="cpMobile" class="form-control form-control-sm" type="text" placeholder="Contact No:" onkeydown="phoneno()" maxlength="10" />
+                </div>
 
-                            <div class="col-md-2" style="padding-left: 0px;padding-right: 0px;">
-                                <table class="table table-bordered">
-                                    <tr><td align="center">Grade recieved</td></tr>
-                                    <tr><td>
-                                        <input id="highest_grade" name="highest_grade" class="form-control form-control-sm" type="text">
-                                    </td></tr>
-                                </table>
-                            </div>
+                <div class="col-md-12">
+                    <hr>
+                </div>
+                    
+                <!--Highest education qualification-->
+                <div class="col-md-12">
+                    <h6>&emsp;Highest education level achieved,</h6>
+                </div>
+                &emsp;
+                <div class="row">
+                <div class="col-lg-3">
+                    <div class="row">
+                        <label>Qualification Achieved</label>
+                    </div>
+                    <div class="row">
+                        <input id="highest_quali" name="highest_quali" class="form-control form-control-sm" style="width:100%;" type="text">
+                    </div>
+                </div>
 
-                            <div class="col-md-2" style="padding-left: 0px;padding-right: 0px;">
-                                <table class="table table-bordered">
-                                    <tr><td align="center">Country</td></tr>
-                                    <tr><td><!--<input name="highest_country" id="highest_country" class="form-control form-control-sm" type="text" style="margin-bottom: 10px;">-->
-                                <?php echo $select_country1; ?>
-                                </td></tr>
-                                </table>
-                            </div>
-                            <div class="col-md-1" style="padding-left: 0px;margin-right: 0px;right: 2px;left: -2px;">
-                                    <table class="table table-bordered">
-                                        <tr><td align="center" style="padding-top: 10px;padding-bottom: 6px;">Year of completion</td></tr>
-                                        <tr><td>
-                                        <?php
-                                        //drop down year list for highest education
-                                        $selected = "";
-                                        echo '<select name="highest_year" id="highest_year" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
-                                        $cur_year = date('Y');
-                                        echo '<option value="" selected="selected"></option>';
-                                        for($year = ($cur_year-25); $year <= ($cur_year); $year++) {
-                                            if ($year == $cur_year) {
-                                                echo '<option value="'.$year.'">'.$year.'</option>';
-                                            } else {
-                                                echo '<option value="'.$year.'">'.$year.'</option>';
-                                            }
-                                        }               
-                                        echo '</select>';
-                                    ?>
-                                        </td></tr>
-                                    </table>
-                                </div>
+                <div class="col-lg-3">
+                    <div class="row">
+                        <label>University / Institute</label>
+                    </div>
+                    <div class="row">
+                        <input id="highest_uni" name="highest_uni" class="form-control form-control-sm" type="text">
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="row">
+                        <label>Grade recieved</label>
+                    </div>
+                    <div class="row">
+                        <input id="highest_grade" name="highest_grade" class="form-control form-control-sm" type="text">
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="row">
+                        <label>Country</label>
+                    </div>
+                    <div class="row">
+                        <?php echo $select_country1; ?>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="row">
+                        <label>Year of completion</label>
+                    </div>
+                    <div class="row">
+                    <?php
+                        //drop down year list for highest education
+                        $selected = "";
+                        echo '<select name="highest_year" id="highest_year" class="form-control form-control-sm" style="margin-top: 7px;">';
+                        $cur_year = date('Y');
+                        echo '<option value="" selected="selected"></option>';
+                        for($year = ($cur_year-25); $year <= ($cur_year); $year++) {
+                            if ($year == $cur_year) {
+                                echo '<option value="'.$year.'">'.$year.'</option>';
+                            } else {
+                                echo '<option value="'.$year.'">'.$year.'</option>';
+                            }
+                        }               
+                        echo '</select>';
+                    ?>
                     </div>
 
-                    <div class="row"><!--Professional qualification-->
-                        <br><h4>&emsp;Professional qualification details,</h4><br>
-                        <div id="row_1" class="row">
-                            <div class="col-md-2">
-                                <div class="row">
-                                    Qualification achieved
-                                </div>
-                                <div class="row">
-                                    <?php echo $select3; ?>
-                                </div>
-                            </div>
+                </div>
+                </div>
 
-                            <div class="col-md-3">
-                                <div class="row">
-                                    University / Institute
-                                </div>
-                                <div class="row">
-                                    <input id="uniName_row0" name="uniName_row[0]" class="form-control form-control-sm" type="text">
-                                </div>
-                            </div>
+                <div class="col-md-12">
+                    <hr>
+                </div>
 
-                            <div class="col-md-2">
-                                <div class="row">
-                                    Grade recieved
-                                </div>
-                                <div class="row">
-                                    <?php echo $select4; ?>
-                                </div>
-                            </div>
+                <!--Professional qualification-->
+                <div class="col-lg-12">
+                    <h6>&emsp;Professional qualification details,</h6>
+                </div>
+                       
+                <div class="col-lg-2">
+                    <div class="row">
+                        <label>Qualification achieved</label>
+                    </div>
+                    <div class="row">
+                        <?php echo $select3; ?>
+                    </div>
+                </div>
 
-                            <div class="col-md-2">
-                                <div class="row">
-                                    Year of completion
-                                </div>
-                                <div class="row">
-                                    <?php
-                                        //drop down year list for highest education
-                                        echo '<select name="year_row[0]" id="year_row0" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
-                                        $cur_year = date('Y');
-                                        echo '<option value="" selected="selected"></option>';
-                                        for($year = ($cur_year-25); $year <= ($cur_year); $year++) {
-                                            if ($year == $cur_year) {
-                                                echo '<option value="'.$year.'">'.$year.'</option>';
-                                            } else {
-                                                echo '<option value="'.$year.'">'.$year.'</option>';
-                                            }
-                                        }               
-                                        echo '</select>';
-                                    ?>
-                                </div>
-                            </div>
+                <div class="col-lg-3">
+                    <div class="row">
+                        <label>University / Institute</label>
+                    </div>
+                    <div class="row">
+                        <input id="uniName_row0" name="uniName_row[0]" class="form-control form-control-sm" type="text">
+                    </div>
+                </div>
 
-                            <div class="col-md-2">
-                                <div class="row">
-                                    Country
-                                </div>
-                                <div class="row">
-                                    <?php echo $select_country2; ?>
-                                </div>
-                            </div>
+                <div class="col-lg-2">
+                    <div class="row">
+                        <label>Grade recieved</label>
+                    </div>
+                    <div class="row">
+                        <?php echo $select4; ?>
+                    </div>
+                </div>
 
-                            <div class="col-md-1">
-                                <div class="row">
-                                    
-                                </div>
-                                <div class="row">
-                                    <button id="add_btn_row1" type="button" class="btn btn-info" style="margin-top: 28px;"><span class="glyphicon glyphicon-plus"></span></button>
-                                </div>
-                            </div>
+                <div class="col-lg-2">
+                    <div class="row">
+                        <label>Year of completion</label>
+                    </div>
+                    <div class="row">
+                        <?php
+                            //drop down year list for highest education
+                            echo '<select name="year_row[0]" id="year_row0" class="form-control form-control-sm" style="margin-top: 7px;">';
+                            $cur_year = date('Y');
+                            echo '<option value="" selected="selected"></option>';
+                            for($year = ($cur_year-25); $year <= ($cur_year); $year++) {
+                                if ($year == $cur_year) {
+                                    echo '<option value="'.$year.'">'.$year.'</option>';
+                                } else {
+                                    echo '<option value="'.$year.'">'.$year.'</option>';
+                                }
+                            }               
+                            echo '</select>';
+                        ?>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="row">
+                        <label>Country</label>
+                    </div>
+                    <div class="row">
+                        <?php echo $select_country2; ?>
+                    </div>
+                </div>
+
+                <div class="col-lg-1">
+                    <div class="row">
+                        
+                    </div>
+                    <div class="row">
+                        <button id="add_btn_row1" type="button" class="btn btn-info" style="margin-top: 28px;">+</button>
+                    </div>
+                </div>
+                        
+                <!--second row-->
+                <div id="row_2" class="row" style="display:none;">
+                    <div class="col-lg-2">
+                        <div class="row">
+                            <?php echo $select7; ?>
                         </div>
+                    </div>
 
-                        <!--second row-->
-                        <div id="row_2" class="row" style="display:none;">
-                            <div class="col-md-2">
-                                <div class="row">
-                                    <?php echo $select7; ?>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="row">
-                                    <input id="uniName_row1" name="uniName_row[1]" class="form-control form-control-sm" type="text">
-                                </div>
-                            </div>
-
-                            <div class="col-md-2">
-                                <div class="row">
-                                    <?php echo $select8; ?>
-                                </div>
-                            </div>
-
-                            <div class="col-md-1">
-                                <div class="row">
-                                    <?php
-                                        //drop down year list for highest education
-                                        echo '<select name="year_row[1]" id="year_row1" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
-                                        $cur_year = date('Y');
-                                        echo '<option value="" selected="selected"></option>';
-                                        for($year = ($cur_year-25); $year <= ($cur_year); $year++) {
-                                            if ($year == $cur_year) {
-                                                echo '<option value="'.$year.'">'.$year.'</option>';
-                                            } else {
-                                                echo '<option value="'.$year.'">'.$year.'</option>';
-                                            }
-                                        }               
-                                        echo '</select>';
-                                    ?>
-                                </div>
-                            </div>
-
-                            <div class="col-md-2">
-                                <div class="row">
-                                    <?php echo $select_country9; ?>
-                                </div>
-                            </div>
-
-                            <div class="col-md-2">
-                                <div class="row" style="margin-left: 71px;">
-                                    <p><button id="remove_btn_row2" type="button" class="btn btn-info" style="margin-top: 11px;"><span class="glyphicon glyphicon-minus"></span></button>
-                                    <button id="add_btn_row2" type="button" class="btn btn-info" style="margin-top: 11px;"><span class="glyphicon glyphicon-plus"></span></button></p>
-                                </div>
-                            </div>
+                    <div class="col-lg-3">
+                        <div class="row">
+                            <input id="uniName_row1" name="uniName_row[1]" class="form-control form-control-sm" type="text">
                         </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="row">
+                            <?php echo $select8; ?>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="row">
+                            <?php
+                                //drop down year list for highest education
+                                echo '<select name="year_row[1]" id="year_row1" class="form-control form-control-sm" style="margin-top: 7px;">';
+                                $cur_year = date('Y');
+                                echo '<option value="" selected="selected"></option>';
+                                for($year = ($cur_year-25); $year <= ($cur_year); $year++) {
+                                    if ($year == $cur_year) {
+                                        echo '<option value="'.$year.'">'.$year.'</option>';
+                                    } else {
+                                        echo '<option value="'.$year.'">'.$year.'</option>';
+                                    }
+                                }               
+                                echo '</select>';
+                            ?>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="row">
+                            <?php echo $select_country9; ?>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="row" style="margin-left: 71px;">
+                            <p><button id="remove_btn_row2" type="button" class="btn btn-info" style="margin-top: 11px;">-</button>
+                            <button id="add_btn_row2" type="button" class="btn btn-info" style="margin-top: 11px;">+</button></p>
+                        </div>
+                    </div>
+                </div>
 
                         <!--third row-->
                         <div id="row_3" class="row" style="display:none;">
@@ -1307,7 +1322,7 @@
         });
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script src="js/1.17.0-jquery.validate.js"></script>
 	
 </body>
 
