@@ -48,7 +48,7 @@
     $result12 = mysqli_query($con,$sql12);
 
     if(mysqli_num_rows($result12)){
-        $select_country12= '<select id ="country_row2" name="country_row[2]" class="form-control form-control-sm" style="height: 37px;font-size:16px;margin-bottom: 9px;width: 150px;margin-top: 7px;margin-left: 97px;">';
+        $select_country12= '<select id ="country_row2" name="country_row[2]" class="form-control form-control-sm" style="margin-top:7px;">';
         $select_country12.= '<option value=""></option>';
     while($rs12 = mysqli_fetch_assoc($result12)){
       $select_country12.='<option value="'.$rs12['id'].'">'.$rs12['country_name'].'</option>';
@@ -84,7 +84,7 @@
     $sql10 = "SELECT pro_name,pro_id FROM sm_professional";
     $result10 = mysqli_query($con,$sql10);
     if(mysqli_num_rows($result10)){
-        $select10 = '<select id="prof_row2" name="prof_row[2]" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
+        $select10 = '<select id="prof_row2" name="prof_row[2]" class="form-control form-control-sm" style="margin-top: 7px;">';
         $select10.= '<option value=""></option>';
     while($rs10 = mysqli_fetch_assoc($result10)){
         $select10.='<option value="'.$rs10['pro_id'].'">'.$rs10['pro_name'].'</option>';
@@ -1015,8 +1015,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-2">
-                        <div class="row" style="margin-left: 71px;">
+                    <div class="col-lg-1">
+                        <div class="row">
                             <p><button id="remove_btn_row2" type="button" class="btn btn-info" style="margin-top: 11px;">-</button>
                             <button id="add_btn_row2" type="button" class="btn btn-info" style="margin-top: 11px;">+</button></p>
                         </div>
@@ -1025,29 +1025,29 @@
 
                         <!--third row-->
                         <div id="row_3" class="row" style="display:none;">
-                            <div class="col-md-2">
+                            <div class="col-lg-2">
                                 <div class="row">
                                     <?php echo $select10; ?>
                                 </div>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-lg-3">
                                 <div class="row">
                                     <input id="uniName_row2" name="uniName_row[2]" class="form-control form-control-sm" type="text">
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
+                            <div class="col-lg-2">
                                 <div class="row">
                                     <?php echo $select11; ?>
                                 </div>
                             </div>
 
-                            <div class="col-md-1">
+                            <div class="col-lg-2">
                                 <div class="row">
                                     <?php
                                         //drop down year list for highest education
-                                        echo '<select name="year_row[2]" id="year_row2" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">';
+                                        echo '<select name="year_row[2]" id="year_row2" class="form-control form-control-sm" style="margin-top: 7px;">';
                                         $cur_year = date('Y');
                                         echo '<option value="" selected="selected"></option>';
                                         for($year = ($cur_year-25); $year <= ($cur_year); $year++) {
@@ -1062,14 +1062,14 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
+                            <div class="col-lg-2">
                                 <div class="row">
                                     <?php echo $select_country12; ?>
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
-                                <div class="row" style="margin-left: 71px;">
+                            <div class="col-lg-1">
+                                <div class="row">
                                     <p><button id="remove_btn_row3" type="button" class="btn btn-info" style="margin-top: 11px;"><span class="glyphicon glyphicon-minus"></span></button>
                                     <!--<button id="add_btn_row3" type="button" class="btn btn-info" style="margin-top: 11px;"><span class="glyphicon glyphicon-plus"></span></button></p>-->
                                 </div>
