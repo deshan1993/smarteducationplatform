@@ -144,7 +144,7 @@
     $sql6 = "SELECT pro_name,pro_id FROM sm_professional";
     $result6 = mysqli_query($con,$sql6);
     if(mysqli_num_rows($result6)){
-        $select6 = '<select id="courses" name="courses" class="form-control form-control-sm" style="height: 37px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px; display:none;">';
+        $select6 = '<select id="courses" name="courses" class="form-control form-control-sm" style="margin-top: 7px; display:none;">';
         $select6.= '<option value=""></option>';
     while($rs6 = mysqli_fetch_assoc($result6)){
         $select6.='<option value="'.$rs6['pro_name'].'">'.$rs6['pro_name'].'</option>';
@@ -264,7 +264,7 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
   
-  <link href="css/home-style.css" rel="stylesheet">
+  <link href="./css/home-style.css" rel="stylesheet">
 
     <script src="js/jquery-ui.js"></script>
     <script src="js/jquery-1.12.4.js"></script>
@@ -966,12 +966,12 @@
                         
                     </div>
                     <div class="row">
-                        <button id="add_btn_row1" type="button" class="btn btn-info" style="margin-top: 28px;">+</button>
+                        <button id="add_btn_row1" type="button" class="btn btn-info" style="margin-top: 33px;">+</button>
                     </div>
                 </div>
                         
                 <!--second row-->
-                <div id="row_2" class="row" style="display:none;">
+                <div id="row_2" class="row" style="display:none; width:100%;">
                     <div class="col-lg-2">
                         <div class="row">
                             <?php echo $select7; ?>
@@ -1017,103 +1017,107 @@
 
                     <div class="col-lg-1">
                         <div class="row">
-                            <p><button id="remove_btn_row2" type="button" class="btn btn-info" style="margin-top: 11px;">-</button>
-                            <button id="add_btn_row2" type="button" class="btn btn-info" style="margin-top: 11px;">+</button></p>
+                            <button id="remove_btn_row2" type="button" class="btn btn-info" style="">-</button>
+                            <button id="add_btn_row2" type="button" class="btn btn-info" style="margin-left: 4px;width: 33.979166px;">+</button>
                         </div>
                     </div>
                 </div>
 
-                        <!--third row-->
-                        <div id="row_3" class="row" style="display:none;">
-                            <div class="col-lg-2">
-                                <div class="row">
-                                    <?php echo $select10; ?>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3">
-                                <div class="row">
-                                    <input id="uniName_row2" name="uniName_row[2]" class="form-control form-control-sm" type="text">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2">
-                                <div class="row">
-                                    <?php echo $select11; ?>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2">
-                                <div class="row">
-                                    <?php
-                                        //drop down year list for highest education
-                                        echo '<select name="year_row[2]" id="year_row2" class="form-control form-control-sm" style="margin-top: 7px;">';
-                                        $cur_year = date('Y');
-                                        echo '<option value="" selected="selected"></option>';
-                                        for($year = ($cur_year-25); $year <= ($cur_year); $year++) {
-                                            if ($year == $cur_year) {
-                                                echo '<option value="'.$year.'">'.$year.'</option>';
-                                            } else {
-                                                echo '<option value="'.$year.'">'.$year.'</option>';
-                                            }
-                                        }               
-                                        echo '</select>';
-                                    ?>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2">
-                                <div class="row">
-                                    <?php echo $select_country12; ?>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-1">
-                                <div class="row">
-                                    <p><button id="remove_btn_row3" type="button" class="btn btn-info" style="margin-top: 11px;"><span class="glyphicon glyphicon-minus"></span></button>
-                                    <!--<button id="add_btn_row3" type="button" class="btn btn-info" style="margin-top: 11px;"><span class="glyphicon glyphicon-plus"></span></button></p>-->
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    
-
-                    
-                    <!--expertise subject-->
-                    <div class="row"><!--Subject fo areas expertise-->
-                    <br>
-                    <div class="col-md-3">
-                        <h5>&emsp;Subject Area of Expertise: </h5>
-                    </div>
-                    <div class="col-md-3">
-                        <?php echo $select_subject1; ?><button id="add_subject_btn1" type="button" class="btn btn-info" style="margin-top: 0px;"><span class="glyphicon glyphicon-plus"></span></button>
-                    </div>
-                    <div class="col-md-3">
-                        <?php echo $select_subject2; ?><button id="add_subject_btn2" type="button" class="btn btn-info" style="margin-top: 0px; display:none;"><span class="glyphicon glyphicon-plus"></span></button>
-                        <button name="remove_subject_btn2" id="remove_subject_btn2" type="button" class="btn btn-info" style="margin-top: 0px; display:none;"><span class="glyphicon glyphicon-minus"></span></button>
-                    </div>
-                    <div class="col-md-3">
-                        <?php echo $select_subject3; ?><button id="add_subject_btn3" type="button" class="btn btn-info" style="margin-top: 0px; display:none;"><span class="glyphicon glyphicon-plus"></span></button>
-                        <button name="remove_subject_btn3" id="remove_subject_btn3" type="button" class="btn btn-info" style="margin-top: 0px; display:none;"><span class="glyphicon glyphicon-minus"></span></button>
-                    </div>
-                    </div>
-
-                    <br>
-                    <div class="row"><!--Area you representing an institute / Professional body-->
-                        <div class="col-6 col-lg-6 col-sm-12">
-                            <h5>&emsp;Area you representing an institute / Professional body: </h5>
-                        </div>
-                        <div class="col-2 col-lg-2 col-sm-6" style="margin-top: 6px;">
-                                <span>&emsp;&emsp;Yes</span>&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="radio-btn3" value="1" id="radio-btn3">  
-                        </div>
-                        <div class="col-2 col-lg-2 col-sm-6" style="margin-top: 6px;">
-                                <span>&emsp;&emsp;No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="radio-btn3" value="0" id="radio-btn4" checked>
-                        </div>
-                        <div class="col-2 col-lg-2 col-sm-12">
-                            <?php echo $select6; ?>
+                <!--third row-->
+                <div id="row_3" class="row" style="display:none; width:100%;">
+                    <div class="col-lg-2">
+                        <div class="row">
+                            <?php echo $select10; ?>
                         </div>
                     </div>
+
+                    <div class="col-lg-3">
+                        <div class="row">
+                            <input id="uniName_row2" name="uniName_row[2]" class="form-control form-control-sm" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="row">
+                            <?php echo $select11; ?>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="row">
+                            <?php
+                                //drop down year list for highest education
+                                echo '<select name="year_row[2]" id="year_row2" class="form-control form-control-sm" style="margin-top: 7px;">';
+                                $cur_year = date('Y');
+                                echo '<option value="" selected="selected"></option>';
+                                for($year = ($cur_year-25); $year <= ($cur_year); $year++) {
+                                    if ($year == $cur_year) {
+                                        echo '<option value="'.$year.'">'.$year.'</option>';
+                                    } else {
+                                        echo '<option value="'.$year.'">'.$year.'</option>';
+                                    }
+                                }               
+                                echo '</select>';
+                            ?>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="row">
+                            <?php echo $select_country12; ?>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-1">
+                        <div class="row">
+                            <button id="remove_btn_row3" type="button" class="btn btn-info" style="">-</button>
+                            <!--<button id="add_btn_row3" type="button" class="btn btn-info" style="">-</button>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <hr>
+                </div>
+                
+                <br>
+                <!--expertise subject-->
+                <!--Subject fo areas expertise-->
+                <div class="col-lg-3">
+                    <h6>&emsp;Subject Area of Expertise: </h6>
+                </div>
+                <div class="col-lg-3">
+                    <?php echo $select_subject1; ?><button id="add_subject_btn1" type="button" class="btn btn-info" style="margin-top: 0px;">+</button>
+                </div>
+                <div class="col-lg-3">
+                    <?php echo $select_subject2; ?><button id="add_subject_btn2" type="button" class="btn btn-info" style="margin-top: 0px; display:none;">+</button>
+                    <button name="remove_subject_btn2" id="remove_subject_btn2" type="button" class="btn btn-info" style="margin-top: 0px; display:none;">-</button>
+                </div>
+                <div class="col-lg-3">
+                    <?php echo $select_subject3; ?><button id="add_subject_btn3" type="button" class="btn btn-info" style="margin-top: 0px; display:none;">+</button>
+                    <button name="remove_subject_btn3" id="remove_subject_btn3" type="button" class="btn btn-info" style="margin-top: 0px; display:none;">-</button>
+                </div>
+
+                <div class="col-lg-12">
+                    <hr>
+                </div>
+                
+
+                <br><br>
+                <!--Area you representing an institute / Professional body-->
+                <div class="col-lg-6">
+                    <h6>&emsp;Area you representing an institute / Professional body: </h6>
+                </div>
+                <div class="col-lg-2" style="margin-top: 6px;">
+                    &emsp;<input class="form-check-input" type="radio" name="radio-btn3" value="1" id="radio-btn3" style="margin-top: 7px;"><span>&emsp;Yes</span>  
+                </div>
+                <div class="col-lg-2" style="margin-top: 6px;">
+                    &emsp;<input class="form-check-input" type="radio" name="radio-btn3" value="0" id="radio-btn4" style="margin-top: 7px;" checked><span>&emsp;No</span>
+                </div>
+                <div class="col-lg-2">
+                    <?php echo $select6; ?>
+                </div>
+                
 
                     <div class="row" id="other-field" style="display:none;">
                         <div class="col-md-4" style="margin-top: 7px;">
