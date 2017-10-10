@@ -334,6 +334,7 @@
        $(document).ready(function () {
         $("#radio-btn4").click(function(){
             $("#other-field").hide();
+            $("#other-field1").hide();
             $("#other-details").val("");
         });
        });
@@ -342,8 +343,10 @@
         $("#courses").change(function () {
             if ($(this).val() == "Other") {
                 $("#other-field").show();
+                $("#other-field1").show();
             } else {
                 $("#other-field").hide();
+                $("#other-field1").hide();
             }
         });
         });
@@ -789,7 +792,7 @@
                 </div>
                
                 <div class="col-md-6">
-                    <select id="gender" name="gender" class="form-control form-control-sm" style="height: 34px;font-size:16px;width: 30%;margin-bottom: 9px;width: 149px;margin-top: 7px;">
+                    <select id="gender" name="gender" class="form-control form-control-sm" style="margin-top: 7px; width:50%;">
                         <option value="">Gender</option>    
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -1117,152 +1120,162 @@
                 <div class="col-lg-2">
                     <?php echo $select6; ?>
                 </div>
+
+                <div class="col-lg-3" id="other-field1" style="display:none;">
+                    <h6 style="margin-top:13px;">&emsp;If other, please specify:</h6>
+                </div>
+                <div class="col-lg-4" id="other-field" style="display:none;">
+                    <input id="other-details" name="other-details" class="form-control form-control-sm" type="text">
+                </div>
+                <div class="col-lg-5"></div>
+
+                <div class="col-lg-12">
+                    <hr>
+                </div>
                 
+                <!--Content Provider Identification No:-->
+                <div class="col-lg-3" style="margin-top: 7px;">
+                    <h6>&emsp;Content Provider Identification No:</h6>
+                </div>
+                <div class="col-lg-4">
+                    <input name="cpId" id="cpId" class="form-control form-control-sm" type="text" value="<?php echo $cp_id; ?>" readonly><br>
+                </div>
+                <div class="col-lg-5">
+                </div>
 
-                    <div class="row" id="other-field" style="display:none;">
-                        <div class="col-md-4" style="margin-top: 7px;">
-                            <h5>&emsp;If other, please specify:</h5>
-                        </div>
-                        <div class="col-md-3">
-                                <input id="other-details" name="other-details" class="form-control form-control-sm" type="text">
-                        </div>
-                    </div>
-                
-                
-
-                    <div class="row"><!--Content Provider Identification No:-->
-                        <div class="col-md-4" style="margin-top: 7px;">
-                            <h5>&nbsp;&nbsp;&nbsp;&nbsp;Content Provider Identification No:</h5>
-                        </div>
-                        <div class="col-md-3">
-                                <input name="cpId" id="cpId" class="form-control form-control-sm" type="text" value="<?php echo $cp_id; ?>" readonly><br>
-                        </div>
-                        <div class="col-md-5">
-
-                        </div>
-                    </div>
-
-                    <div class="row"><!--Terms &amp; conditions-->
-                        <div class="col-12 col-lg-12 col-sm-12">
-                            <textarea id="terms" name="terms" class="form-control" id="exampleFormControlTextarea1" style="padding-bottom: 14px;" rows="5" col="1" placeholder="Terms &amp; Conditions" readonly></textarea>
-                            <br>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-lg-12 col-sm-12">
-                                &nbsp;<input type="checkbox" id="check1" name="check1" class="form-check-input"><span>&nbsp;&nbsp;&nbsp;I hereby acknowledge that I have read and agree to the above terms and conditions</span>
-                                <br>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col align-right-end" style="float:right;margin-right: 51px;margin-top: 35px;margin-bottom: 15px;">
-                            <input type="text" id="count_new" name="count_new" value="<?php echo $count_new; ?>" style="display:none;">
-                            <button type="submit" id="cancel1" name="cancel1" class="btn btn-primary">Cancel</button>&nbsp;&nbsp;&nbsp;
-                            <button type="submit" id="submit1" name="submit1" class="btn btn-primary">Submit</button><br><br><br><br>
-                        </div>
-                    </div>
+                <div class="col-lg-12">
+                    <hr>
+                </div>
                     
+                <!--Terms &amp; conditions-->
+                <div class="col-lg-12">
+                    <textarea id="terms" name="terms" class="form-control" id="exampleFormControlTextarea1" style="padding-bottom: 14px;" rows="5" col="1" placeholder="Terms &amp; Conditions" readonly></textarea>
+                    <br>
+                </div>
+      
+                <div class="col-lg-12">
+                    &emsp;&emsp;<input type="checkbox" id="check1" name="check1" class="form-check-input"><span>&nbsp;&nbsp;&nbsp;I hereby acknowledge that I have read and agree to the above terms and conditions</span>
+                    <br><br><br>
+                </div>
+
+                <div class="col-lg-10">
+                    <input type="text" id="count_new" name="count_new" value="<?php echo $count_new; ?>" style="display:none;">
+                </div>
+                <div class="col-lg-2">
+                    <button type="submit" id="cancel1" name="cancel1" class="btn btn-primary">Cancel</button>&emsp;
+                    <button type="submit" id="submit1" name="submit1" class="btn btn-primary">Submit</button><br><br><br><br>
+                </div>
                     
                 </div><!--end of individual form-->
 				</form>
                 
 
                 <div class="row" id="professional-category" style="display:none;"><!--professsional form-->
-				<form id="form2" method="POST" action="../model/insertInstituteDetails.php">
+				<form id="form2" method="POST" action="./model/insertInstituteDetails.php">
                 <div class="row">
-                    <h4><br>&nbsp;&nbsp;&nbsp;&nbsp;If Educational Institution / Professional body,</h4>
-                    <div class="col-12 col-md-12 col-sm-12">
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="instName" name="instName" class="form-control form-control-sm" type="text" placeholder="Name of the Educational Institution / Professional Body:">
-                        </div>
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="regNo" name="regNo" class="form-control form-control-sm" type="text" placeholder="Business Registration No:">
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-12 col-sm-12">
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <div class="row">
-                                <div class="col-sm-6 col-6 col-md-5" style="top: 15px;right: 4px;">
-                                    Date of Registration:
-                                </div>
-                                <div class="col-sm-6 col-6 col-md-7">
-                                <input type="text" id="dateOfReg" name="dateOfReg" class="form-control form-control-sm" placeholder="Date of Registration:">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="adrz" name="adrz" class="form-control form-control-sm" type="text" placeholder="Business Address:">
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-12 col-sm-12">
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="mobileNum" name="mobileNum" class="form-control form-control-sm" type="text" placeholder="Contact No:" onkeydown="phoneno1()" maxlength="10" />
-                        </div>
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="person_no" name="person_no" class="form-control form-control-sm" type="text" placeholder="Contact Person No:" onkeydown="phoneno2()" maxlength="10" />
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-12 col-sm-12">
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="foreignUni" name="foreignUni" class="form-control form-control-sm" type="text" placeholder="Affiliated Foreign Universities:">
-                        </div>
-                        <div class="col-sm-12 col-6 col-md-6">
-                            <input id="instId" name="instId" class="form-control form-control-sm" type="text" value="<?php echo $cp_inst_id; ?>" readonly>
-                            <br><br>
-                        </div>
-                    </div>
+                <div class="col-lg-12">
+                    <h6><br>&emsp;If Educational Institution / Professional body,</h6>
+                </div>    
+                <div class="col-lg-6">
+                    <input id="instName" name="instName" class="form-control form-control-sm" type="text" placeholder="Name of the Educational Institution / Professional Body:">
+                </div>
+                <div class="col-lg-6">
+                    <input id="regNo" name="regNo" class="form-control form-control-sm" type="text" placeholder="Business Registration No:">
                 </div>
 
+                <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-6" style="margin-top: 13px;">
+                        Date of Registration:
+                    </div>
+                    <div class="col-lg-6">
+                    <input type="text" id="dateOfReg" name="dateOfReg" class="form-control form-control-sm" placeholder="Date of Registration:">
+                    </div>
+                </div>    
+                </div>
+
+                <div class="col-lg-6">
+                    <input id="adrz" name="adrz" class="form-control form-control-sm" type="text" placeholder="Business Address:">
+                </div>
+
+                <div class="col-lg-6">
+                    <input id="mobileNum" name="mobileNum" class="form-control form-control-sm" type="text" placeholder="Contact No:" onkeydown="phoneno1()" maxlength="10" />
+                </div>
+
+                <div class="col-lg-6">
+                    <input id="person_no" name="person_no" class="form-control form-control-sm" type="text" placeholder="Contact Person No:" onkeydown="phoneno2()" maxlength="10" />
+                </div>
+
+                <div class="col-lg-6">
+                    <input id="foreignUni" name="foreignUni" class="form-control form-control-sm" type="text" placeholder="Affiliated Foreign Universities:">
+                </div>
+
+                <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-6" style="margin-top: 13px;">
+                        Content Provider Identification No:
+                    </div>
+                    <div class="col-lg-6">
+                        <input id="instId" name="instId" class="form-control form-control-sm" type="text" value="<?php echo $cp_inst_id; ?>" readonly>
+                    </div>
+                </div> 
+                </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <hr>
+                </div>
+                
                 <!--expertise subject-->
-                <div class="row"><!--Subject fo areas expertise-->
-                        <br>
-                        <div class="col-md-3">
-                            <h5>&nbsp;&nbsp;&nbsp;&nbsp;Subject Area of Expertise: </h5>
-                        </div>
-                        <div class="col-md-3">
-                            <?php echo $select_sub1; ?><button id="add_sub_btn1" type="button" class="btn btn-info" style="margin-top: 0px;"><span class="glyphicon glyphicon-plus"></span></button>
-                        </div>
-                        <div class="col-md-3">
-                            <?php echo $select_sub2; ?><button id="add_sub_btn2" type="button" class="btn btn-info" style="margin-top: 0px; display:none;"><span class="glyphicon glyphicon-plus"></span></button>
-                            <button name="remove_sub_btn2" id="remove_sub_btn2" type="button" class="btn btn-info" style="margin-top: 0px; display:none;"><span class="glyphicon glyphicon-minus"></span></button>
-                        </div>
-                        <div class="col-md-3">
-                            <?php echo $select_sub3; ?><button id="add_sub_btn3" type="button" class="btn btn-info" style="margin-top: 0px; display:none;"><span class="glyphicon glyphicon-plus"></span></button>
-                            <button name="remove_sub_btn3" id="remove_sub_btn3" type="button" class="btn btn-info" style="margin-top: 0px; display:none;"><span class="glyphicon glyphicon-minus"></span></button>
-                        </div>
-                        </div>
-						<br>
-                
+                <!--Subject fo areas expertise-->
+                <br>
+                <div class="row">
+                <div class="col-lg-3">
+                    <h6>&emsp;Subject Area of Expertise: </h6>
+                </div>
+                <div class="col-lg-3">
+                    <?php echo $select_sub1; ?><button id="add_sub_btn1" type="button" class="btn btn-info" style="margin-top: 0px;">+</button>
+                </div>
+                <div class="col-lg-3">
+                    <?php echo $select_sub2; ?><button id="add_sub_btn2" type="button" class="btn btn-info" style="margin-top: 0px; display:none;">+</button>
+                    <button name="remove_sub_btn2" id="remove_sub_btn2" type="button" class="btn btn-info" style="margin-top: 0px; display:none;">-</button>
+                </div>
+                <div class="col-lg-3">
+                    <?php echo $select_sub3; ?><button id="add_sub_btn3" type="button" class="btn btn-info" style="margin-top: 0px; display:none;">+</button>
+                    <button name="remove_sub_btn3" id="remove_sub_btn3" type="button" class="btn btn-info" style="margin-top: 0px; display:none;">-</button>
+                </div>
+                </div>
 
-                <script type="text/javascript">
-                    $(function(){
-                        $('#')
-                    });
-                </script>
+                <div class="col-lg-12">
+                    <hr>
+                </div>
                 
+                <br>
+
                 <div class="row"><!--Terms &amp; conditions-->
-                    <div class="col-12 col-lg-12 col-sm-12">
-                        <textarea id="textarea" class="form-control" id="exampleFormControlTextarea1" style="padding-bottom: 14px;" rows="5" col="1" placeholder="Terms &amp; Conditions"></textarea>
+                    <div class="col-lg-12">
+                        <textarea id="textarea" class="form-control" id="exampleFormControlTextarea1" style="padding-bottom: 14px;" rows="5" col="1" placeholder="Terms &amp; Conditions" readonly></textarea>
                         <br>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-lg-12 col-sm-12">
-                            &nbsp;<input type="checkbox" id="check2" name="check2" class="form-check-input"><span>&nbsp;&nbsp;&nbsp;I hereby acknowledge that I have read and agree to the above terms and conditions</span>
-                            <br>
+                    <div class="col-lg-12">
+                        &emsp;&emsp;<input type="checkbox" id="check2" name="check2" class="form-check-input"><span>&nbsp;&nbsp;&nbsp;I hereby acknowledge that I have read and agree to the above terms and conditions</span>
+                        <br><br>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col align-right-end" style="float:right;margin-right: 51px;margin-top: 35px;margin-bottom: 15px;">
-                        <input type="text" name="id2" id="id2" value="<?php echo $count_inst_new; ?>" style="display:none">
-                        <button type="submit" class="btn btn-primary">Cancel</button>&nbsp;&nbsp;&nbsp;
-                        <button type="submit" id="submit2" name="submit2" class="btn btn-primary">Submit</button><br><br><br><br>
-                    </div>
+                <div class="col-lg-10">
+                    <input type="text" name="id2" id="id2" value="<?php echo $count_inst_new; ?>" style="display:none">
                 </div>
+                <div class="col-lg-2">
+                <button type="submit" class="btn btn-primary">Cancel</button>&emsp;
+                <button type="submit" id="submit2" name="submit2" class="btn btn-primary">Submit</button><br><br><br><br>
+                </div> 
+                </div>
+
 				</form>
                 </div><!--end of individual form-->
             </div>
@@ -1307,7 +1320,9 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
   </div>
-  
+  <link rel="stylesheet" href="css/jquery_ui.css">
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/1.12.1-jquery-ui.js"></script>
 	 <!--validate date of birth-->
     <script>
         $( function() {
